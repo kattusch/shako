@@ -9,7 +9,7 @@ defmodule Shako.Application do
   def start(_type, _args) do
     children = [
       ShakoWeb.Telemetry,
-      Shako.Repo,
+      # Shako.Repo,
       {DNSCluster, query: Application.get_env(:shako, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: Shako.PubSub},
       # Start a worker by calling: Shako.Worker.start_link(arg)
